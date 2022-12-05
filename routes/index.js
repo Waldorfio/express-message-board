@@ -27,4 +27,11 @@ router.get('/new', function(req, res, next) {
   res.render('form');
 });
 
+router.post('/new', function(req, res, next) {
+  // Grab submit button contents, and push to array
+  messages.push({text: req.body.inputMsg, user: req.body.inputUsr, added: new Date()});
+  // Re-render homepage
+  res.redirect('/')
+})
+
 module.exports = router;
