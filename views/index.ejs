@@ -5,7 +5,16 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Mini Message Board</h1>
+    <p>Welcome to a mini-message board!</p>
+
+    <% for(const msg of messages) { %>
+      <div id='msg-container'>
+        <h3><%= msg.user%></h3>
+        <p><%= msg.text%></p>
+        <span><%= msg.added%></span>
+      </div>
+    <% } %>
+
   </body>
 </html>
